@@ -12,29 +12,17 @@ h1 {
 }
 a {
 	font-family: Raleway, sans-serif;
-	/*color: #F15B31;*/
+	color: #F15B31;
 	text-transform: uppercase;
 	text-decoration: none;
 	letter-spacing: 1px;
 	font-weight: 600;
 	font-size: 18px;
 	margin: 0 20px;
+	border-bottom: 2px solid transparent;
 }
-a:link {
-	text-decoration: none;
-	color: #ffffff /* this makes it white on any link */
-}
-a:visited {
-	text-decoration: none;
-	color: #ffffff /* this is also white for any visited link */
-}
-a:hover {
-	text-decoration: underline;
-	color: #ffffff /*this link is white, but when you hover over it, the underline shows up */
-}
-a:active {
-	text-decoration: none;
-	color: #fffff /*another white link that is the active link */
+a:hover{
+	border-color: white;
 }
 h2 {
 	font-family: Raleway, sans-serif;
@@ -64,6 +52,45 @@ nav {
 	color: white;
 	padding: 20px 0;
 }
+nav a {
+  text-decoration: none;
+  color: white;
+}
 img {
 	margin: 40px 8px 0 8px;
+}
+footer {
+	text-transform: uppercase;
+	padding: 0 20px;
+	background-color: #0D2C40;
+	color: white;
+	font-family: Raleway, sans-serif;
+	font-size: 14px;
+	letter-spacing: .08em;
+	font-weight: 500;
+}
+footer p {
+	text-decoration: none;
+	color: white;
+	font-family: Raleway, sans-serif;
+}
+
+.copyright{
+	float: left;
+}
+.message{
+	float: right;
+	font
+}
+.clearfix:after {
+visibility: hidden;
+display: block;
+content: " ";
+clear: both;
+height: 0;
+font-size: 0;
+}
+.name{
+	color: #F15B31;
+	font-weight: 700;
 }
