@@ -1,4 +1,4 @@
-console.log("Up and running!")
+console.log('Up and running!');
 
 var cards = [
 {
@@ -25,10 +25,12 @@ var cards = [
 cardsInPlay = [];
 
 var checkForMatch = function () {
-	if (cardsInPlay[0] === cardsInPlay[1]) {
-	console.log("You found a match!");
+	if (cardsInPlay.length === 2 && cardsInPlay[0] === cardsInPlay[1]) {
+		//alert 'You found a match'
+	alert("You found a match!");
 	} else {
-	console.log("Sorry, try again.");
+		//alert 'Sorry, try again'
+	alert("Sorry, try again.");
 }
 };
 
@@ -36,29 +38,24 @@ var flipCard = function () {
 	//get card id
 	var cardId = this.getAttribute('data-id');
 	this.setAttribute('src', cards[cardId].cardImage);
-	if (cardsInPlay.length === 2 && cardsInPlay[0] === cardsInPlay[1]) {
-		alert('You found a match');
-	} else {
-		alert('Sorry, try again.')
-	}
-	console.log('User flipped' + cards[cardID].rank);
-	cardsInPlay.push(cards[cardID].rank);
-	console.log('User flipped' + cards[cardID].suit);
-	console.log('User flipped' + cards[cardID].cardImage);
+	console.log('User flipped' + cards[cardId].rank);
+	cardsInPlay.push(cards[cardId].rank);
+	console.log('User flipped' + cards[cardId].suit);
+	console.log('User flipped' + cards[cardId].cardImage);
 checkForMatch();
 };
 
 var createBoard = function () {
-	for (var i = 0;; i < cards.length; i++) {
+	for (var i = 0; i < cards.length; i++) {
 		var cardElement = document.createElement('img');
 	cardElement.setAttribute('src', 'images/back.png');
 	cardElement.setAttribute('data-id', i);
 	cardElement.addEventListener('click', flipCard);
-	document.getElementByClassName('cardElement')[0].addEventListener('click', flipCard);
-	document.getElementByIdName('game-board').appendChild(cardElement);
-createBoard();
-	}
+		var gameBoard = document.getElementById('game-board');
+		gameBoard.appendChild(cardElement);
+	};
 }
 
+createBoard();
 
 
